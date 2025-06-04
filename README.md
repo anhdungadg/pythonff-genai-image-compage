@@ -119,3 +119,14 @@ genai-image-compare/
 ## Giấy phép
 
 MIT License
+
+
+## DISCLAIMER
+- For educational/reference purposes only
+
+- Not production-ready, use at your own risk
+
+- No warranty provided - test thoroughly before use
+
+- Author not liable for any damages or issues
+
