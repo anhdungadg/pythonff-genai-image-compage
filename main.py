@@ -21,7 +21,7 @@ def parse_arguments():
     parser.add_argument(
         "--models",
         nargs="+",
-        choices=["DALL-E-3", "Nova-Canvas", "SDXL", "all"],
+        choices=["Nova-Canvas", "SDXL", "all"],
         default=["all"],
         help="Models to evaluate (default: all)"
     )
@@ -61,7 +61,7 @@ def main():
     
     # Process model selection
     if "all" in args.models:
-        models = ["DALL-E-3", "Nova-Canvas", "SDXL"]
+        models = ["Nova-Canvas", "SDXL"]
     else:
         models = args.models
     

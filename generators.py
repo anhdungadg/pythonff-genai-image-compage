@@ -6,61 +6,18 @@ import time
 import json
 import base64
 import io
-import requests
 import boto3
 from PIL import Image
 import torch
 from diffusers import StableDiffusionXLPipeline
-import openai
 
 from config import (
-    OPENAI_API_KEY,
     AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY,
     AWS_REGION,
     IMAGE_SIZE,
     IMAGE_QUALITY
 )
-
-
-class DallE3Generator:
-    """Generate images using OpenAI's DALL-E 3 model."""
-    
-    def __init__(self):
-        """Initialize the DALL-E 3 generator."""
-        openai.api_key = OPENAI_API_KEY
-    
-    def generate(self, prompt):
-        """
-        Generate an image using DALL-E 3.
-        
-        Args:
-            prompt: Text prompt for image generation
-            
-        Returns:
-            tuple: (PIL Image, generation time in seconds)
-        """
-        start_time = time.time()
-        
-        try:
-            response = openai.Image.create(
-                model="dall-e-3",
-                prompt=prompt,
-                size=f"{IMAGE_SIZE[0]}x{IMAGE_SIZE[1]}",
-                quality=IMAGE_QUALITY,
-                n=1,
-            )
-            
-            image_url = response['data'][0]['url']
-            image = Image.open(requests.get(image_url, stream=True).raw)
-            
-        except Exception as e:
-            print(f"Error generating image with DALL-E 3: {e}")
-            # Return a blank image in case of error
-            image = Image.new('RGB', IMAGE_SIZE, color='white')
-        
-        generation_time = time.time() - start_time
-        return image, generation_time
 
 
 class NovaCanvasGenerator:
@@ -172,7 +129,6 @@ def get_generator(model_name):
         object: An instance of the appropriate generator class
     """
     generators = {
-        'DALL-E-3': DallE3Generator,
         'Nova-Canvas': NovaCanvasGenerator,
         'SDXL': StableDiffusionGenerator
     }

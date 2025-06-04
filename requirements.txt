@@ -8,7 +8,6 @@ torchvision
 transformers
 lpips
 scikit-image
-openai
 boto3
 diffusers
 scipy

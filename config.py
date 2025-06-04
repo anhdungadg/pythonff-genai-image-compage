@@ -16,7 +16,6 @@ for directory in [OUTPUT_DIR, REFERENCE_IMAGES_DIR, REPORTS_DIR]:
     directory.mkdir(exist_ok=True, parents=True)
 
 # API Keys (replace with your actual keys or use environment variables)
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "your_openai_key")
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID", "your_key")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "your_secret")
 AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
