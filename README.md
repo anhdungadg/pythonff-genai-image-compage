@@ -4,11 +4,11 @@ Công cụ đánh giá và so sánh chi tiết các mô hình AI tạo hình ả
 
 ## Mô tả
 
-GenAI Image Compare là một framework toàn diện để đánh giá và so sánh các mô hình AI tạo hình ảnh khác nhau như DALL-E 3, Amazon Nova Canvas và Stable Diffusion XL. Công cụ này cung cấp các phép đo định lượng và trực quan để giúp người dùng hiểu rõ điểm mạnh và điểm yếu của từng mô hình trong các tình huống khác nhau.
+GenAI Image Compare là một framework toàn diện để đánh giá và so sánh các mô hình AI tạo hình ảnh khác nhau như Amazon Nova Canvas và Stable Diffusion XL. Công cụ này cung cấp các phép đo định lượng và trực quan để giúp người dùng hiểu rõ điểm mạnh và điểm yếu của từng mô hình trong các tình huống khác nhau.
 
 ## Tính năng
 
-- **Đánh giá đa mô hình**: So sánh DALL-E 3, Amazon Nova Canvas và Stable Diffusion XL
+- **Đánh giá đa mô hình**: So sánh Amazon Nova Canvas và Stable Diffusion XL
 - **Đa dạng prompts**: Kiểm tra với các prompt đơn giản, trung bình, phức tạp và chứa nhiều văn bản
 - **Đánh giá tự động**: Tính toán các chỉ số như CLIP score, thời gian tạo hình ảnh
 - **Đánh giá con người**: Hỗ trợ thu thập và phân tích đánh giá từ người dùng
@@ -19,7 +19,7 @@ GenAI Image Compare là một framework toàn diện để đánh giá và so s�
 
 - Python 3.8+
 - Các thư viện Python (xem `requirements.txt`)
-- API keys cho các dịch vụ (OpenAI, AWS)
+- API keys cho AWS
 - GPU (tùy chọn, nhưng được khuyến nghị cho Stable Diffusion)
 
 ## Cài đặt
@@ -39,7 +39,6 @@ pip install -r requirements.txt
    - Tạo file `.env` trong thư mục gốc
    - Thêm các API keys của bạn:
    ```
-   OPENAI_API_KEY=your_openai_key
    AWS_ACCESS_KEY_ID=your_aws_key
    AWS_SECRET_ACCESS_KEY=your_aws_secret
    AWS_REGION=us-east-1
@@ -59,10 +58,10 @@ python main.py
 python main.py --quick-test
 ```
 
-### Chỉ đánh giá một số mô hình cụ thể
+### Chỉ đánh giá một mô hình cụ thể
 
 ```bash
-python main.py --models DALL-E-3 SDXL
+python main.py --models SDXL
 ```
 
 ### Chỉ sử dụng một số loại prompts
@@ -120,7 +119,6 @@ genai-image-compare/
 
 MIT License
 
-
 ## DISCLAIMER
 - For educational/reference purposes only
 
@@ -129,4 +127,3 @@ MIT License
 - No warranty provided - test thoroughly before use
 
 - Author not liable for any damages or issues
-
